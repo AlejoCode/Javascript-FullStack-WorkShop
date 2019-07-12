@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Point 2</title>
+</head>
+<body>
+    <script>
+        let array = [];
+        let total = 0;
+        let cashierSum = 0;
+        let cashierTotal = [];
+        let daySum = 0;
+        let dayTotal = [];
+        let bestCashierOfTheDay = "";
+        let bestCashierOfTheDayCounter = 0 ;
+        let bestCashierOfTheDayTotal = [];
+        let bestCashierOfTheDayIndex = [];
+
+        let worstCashierOfTheDay = "";
+        let worstCashierOfTheDayCounter = 100000 ;
+        let worstCashierOfTheDayTotal = [];
+        let worstCashierOfTheDayIndex = [];
+
+
+
+
+        console.log(array)
+        for(let cashier = 0; cashier < 10; cashier++) {
+            cashierSum = 0;
+            let days = [];
+            for(let day = 0; day < 180; day++) {
+             days.push(Math.round(Math.random() * 50));
+             total += days[day];
+             cashierSum += days[day];
+            }
+            array.push(days)
+            cashierTotal.push(cashierSum);
+        }
+        console.log("array : " + array);
+        console.log("total : " + total);
+        console.log("cashierTotal : " + cashierTotal);
+
+        alert("Total de ventas de todos los cajeros : " + total );
+        let bestChashier = cashierTotal.indexOf(Math.max(...cashierTotal));
+        console.log("bestChashier : " + bestChashier);
+
+        for(let day = 0; day < 180; day ++) {
+            daySum = 0;
+            bestCashierOfTheDay = "";
+            bestCashierOfTheDayCounter = 0 ;
+            worstCashierOfTheDay = "";
+            worstCashierOfTheDayCounter = 100000 ;
+            for(let cashier = 0; cashier < 10; cashier ++) {
+                daySum += array[cashier][day];
+                if(bestCashierOfTheDayCounter < array[cashier][day]) {
+                    bestCashierOfTheDay = cashier;
+                    bestCashierOfTheDayCounter = array[cashier][day];
+                }
+                if(worstCashierOfTheDayCounter > array[cashier][day]) {
+                    worstCashierOfTheDay = cashier;
+                    worstCashierOfTheDayCounter = array[cashier][day];
+                }
+            }
+            dayTotal.push(daySum);
+            bestCashierOfTheDayTotal.push(bestCashierOfTheDayCounter);
+            bestCashierOfTheDayIndex.push(bestCashierOfTheDay);
+            worstCashierOfTheDayTotal.push(worstCashierOfTheDayCounter);
+            worstCashierOfTheDayIndex.push(worstCashierOfTheDay);
+            
+        }
+        console.log("dayTotal : " + dayTotal);
+        console.log("bestCashierOfTheDayTotal : " + bestCashierOfTheDayTotal);
+        console.log("bestCashierOfTheDayIndex : " + bestCashierOfTheDayIndex);
+        console.log("worstCashierOfTheBestDayTotal : " + worstCashierOfTheDayTotal);
+        console.log("worstCashierOfTheBestDayIndex : " + worstCashierOfTheDayIndex);
+        let bestDay = dayTotal.indexOf(Math.max(...dayTotal));
+        console.log("bestDay : " + bestDay);
+        console.log("bestCashierOfTheBestDayTotal : " + bestCashierOfTheDayTotal[bestDay]);
+        console.log("bestCashierOfTheBestDayIndex : " + bestCashierOfTheDayIndex[bestDay]);
+
+
+        console.log("worstCashierForDay100Index : " + worstCashierOfTheDayIndex[100]);
+        console.log("worstCashierForDay100Total : " + worstCashierOfTheDayTotal[100]);
+
+
+        console.log("worstCashierForDay50Index : " + worstCashierOfTheDayIndex[50]);
+        console.log("worstCashierForDay50Total : " + worstCashierOfTheDayTotal[50]);
+
+
+        console.log("bestCashierForDay50Index : " + bestCashierOfTheDayIndex[50]);
+        console.log("bestCashierForDay50Total : " + bestCashierOfTheDayTotal[50]);
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Point 5</title>
+</head>
+<body>
+    <script>
+        let chars = 0;
+        let spaces = 0;
+        let word = prompt("Enter word to be threated xoxo") ;
+        let wordArray = word.split("");
+        console.log("wordArray : " + wordArray);
+        for(char of wordArray){
+            if(char == "") {
+                spaces++;
+            } else {
+                chars++;
+            }
+        }
+        wordArray.reverse();    
+        let reversedWordArray= wordArray.join("");
+        alert("Your word up side down is : " + reversedWordArray);
+        alert("It has " + chars + " chars");
+        alert("It has " + spaces + " spaces");
+
+
+    </script>
+</body>
+</html>

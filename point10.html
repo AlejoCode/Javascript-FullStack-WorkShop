@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Point 10</title>
+</head>
+<body>
+    <script>
+        let word = prompt("Enter word to be checked") ;
+        let wordArray = word.split("");
+        console.log("wordArray : " + wordArray);
+        wordArray.reverse();    
+        let reversedWordArray= wordArray.join("");
+        alert("Your word up side down is : " + reversedWordArray);
+        if(word == reversedWordArray) {
+            alert("The word is palindrome");
+        } else {
+            alert("The word ain't palindrome at all");
+
+        }
+
+
+    </script>
+</body>
+</html>

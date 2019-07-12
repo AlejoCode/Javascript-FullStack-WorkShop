@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Point 8</title>
+</head>
+<body>
+    <script>
+        let age = prompt("Enter your birth date so you can know for how long have you lived ...")
+        let dueDate = new Date("2019-04-27");
+        alert(dueDate);
+        let ageDate = new Date(age);
+        var diffDays = parseInt((dueDate - ageDate) / (1000 * 60 * 60 * 24)); 
+        let years = 0;
+        let months = 0;
+        let days = 0;
+        if(diffDays >= 365) {
+            years = Math.floor(diffDays/365);
+            diffDays -= (years * 365);
+        }
+        if(diffDays >= 30) {
+            months = Math.floor(diffDays/30);
+            diffDays -= (months)
+        }
+            alert("You have " + years + " years " + months + " months and " + diffDays + " days");         
+    </script>
+</body>
+</html>

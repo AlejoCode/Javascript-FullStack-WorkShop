@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Point 7</title>
+</head>
+<body>
+    <script>
+        let phrase = prompt("enter phrase to be (-) separated ") ;
+        let phraseArr = phrase.split("");
+        for(let i = 0; i < phraseArr.length-1; i+=2) {
+            if(phraseArr[i] == " ") {
+                phraseArr[i] = "-";
+                phraseArr.splice(i+1, 0, "-");
+            } else {
+                phraseArr.splice(i+1, 0, "-");
+            }
+        }
+        let treatedArr= phraseArr.join("");
+
+        alert("The phrase separated is : " + treatedArr);
+    </script>
+</body>
+</html>

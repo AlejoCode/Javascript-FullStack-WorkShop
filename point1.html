@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Point 1</title>
+</head>
+<body>
+    <script>
+        let list = new Array, word;
+        do {
+         word = prompt("Enter a name");
+            if(word != "") {
+                if(list.includes(word) === false) {
+                    list.push(word);
+                } else {
+                    alert("This name it's already saved please enter another one")
+                }
+            } else {
+                alert("List completed succesfully")
+            }
+        } while(word != "")
+
+        console.log(list.sort());
+</script>
+</body>
+</html>
+
